@@ -49,4 +49,5 @@ module.exports = {
   email_username: process.env.EMAIL_USERNAME,
   email_password: process.env.EMAIL_PASSWORD,
   allowedOrigins: process.env.ALLOWED_ORIGINS,
+  mediaSize:  process.env.MEDIA_SIZE || 20 * 1024 * 1024,
 };

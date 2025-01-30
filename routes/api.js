@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
   });
 });
 
-
+router.use("/media", require("./mediaRoutes")); 
 router.use("/auth", require("./authRoutes"));
 router.use("/users", require("./userRoutes"));
 
