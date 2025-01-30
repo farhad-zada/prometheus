@@ -1,0 +1,10 @@
+node_modules
+npm-debug.log
+.DS_Store
+.env
+.git
+.gitignore
+.prettierrc
+api
+.github
+README.md

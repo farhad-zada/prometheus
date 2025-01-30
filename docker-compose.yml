@@ -1,0 +1,30 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - MONGODB_URI=mongodb://nimda:321nimda@mongo:27017/mauth?authSource=admin
+      - JWT_SECRET=whoever-reads-this-is-an-idiot-and-he-accepts-this-without-hesitation
+      - JWT_EXPIRES_IN=7d
+      - EMAIL_SERVICE=SendGrid
+      - EMAIL_USERNAME=apikey
+      - EMAIL_PASSWORD=your-sendgrid-api-key
+      - EMAIL_FROM=your-email-address
+      - ALLOWED_ORIGINS=*
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:5.0.3
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=nimda
+      - MONGO_INITDB_ROOT_PASSWORD=321nimda
+
+volumes:
+  mongodb_data:
