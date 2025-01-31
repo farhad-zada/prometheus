@@ -38,7 +38,7 @@ function validateConfig(config) {
 }
 
 module.exports = {
-  port: process.env.PORT || 3000,
+  port: process.env.PORT || 3001,
   environment: process.env.ENVIRONMENT,
   db_uri: process.env.MONGODB_URI,
   validateConfig,
