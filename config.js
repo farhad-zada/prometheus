@@ -1,4 +1,4 @@
-// require("dotenv").config();
+require("dotenv").config();
 
 function validateConfig(config) {
   if (!config.port) {

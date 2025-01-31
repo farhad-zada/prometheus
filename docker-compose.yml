@@ -2,11 +2,11 @@ services:
   app:
     build: .
     ports:
-      - "3000:3000"
+      - "3001:3001"
     volumes:
       - app_data:/app/data
     environment:
-      - PORT=3000
+      - PORT=3001
       - MONGODB_URI=mongodb://nimda:321nimda@mongo:27017/mauth?authSource=admin
       - JWT_SECRET=whoever-reads-this-is-an-idiot-and-he-accepts-this-without-hesitation
       - JWT_EXPIRES_IN=7d
