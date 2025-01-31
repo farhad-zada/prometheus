@@ -51,7 +51,7 @@ mongoose
     app.use((req, res, next) => {
       res.setHeader("Access-Control-Allow-Origin", "*");
       next();
-    }, express.static(imagesPath));
+    });
 
     app.use(
       "/md",
@@ -64,7 +64,7 @@ mongoose
         const files = fs
           .readdirSync(imagesPath)
           .map((file) => `${req.protocol}://${req.get("host")}/md/${file}`);
-        res.status(404).json({ data: files });
+        res.status(200).json({ data: files });
       }
     );
 
