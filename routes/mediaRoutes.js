@@ -7,5 +7,5 @@ router.post(
   saveImage
 );
 
-router.delete("/:imageName");
+router.delete("/:imageName", deleteImage);
 module.exports = router;

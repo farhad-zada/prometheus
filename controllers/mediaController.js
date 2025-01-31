@@ -50,8 +50,8 @@ async function deleteImage(req, res) {
         console.error("Error deleting file:", err);
         return errorResponse(res, "Image not found!", 400);
       }
-      return successResponse(res, { message: "Image deleted!" });
       console.log("File deleted successfully!");
+      return successResponse(res, { message: "Image deleted!" });
     }
   );
 }

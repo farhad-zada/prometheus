@@ -1,4 +1,4 @@
-@root = http://127.0.0.1:3000/api/v1/media
+@root = http://127.0.0.1:3001/api/v1/media
 
 @authToken = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzM2ZTIzYzljMWU5NjdmOWNlMGI5ODMiLCJlbWFpbCI6ImZhcmhhZEBnbWFpbC5jb20iLCJpYXQiOjE3MzE2NTAxMDksImV4cCI6MTczOTQyNjEwOX0.8krrYm5SnZJo7DzAtDgGI_Wp742OyeaTtBI00qFAhAk
 
@@ -20,4 +20,12 @@ Content-Type: image/jpeg
 ### get images 
 
 # @name list
-GET http://127.0.0.1:3000/md/0ac27c30-b9ce-4acd-ad68-a7f3d9e2eb00.jpeg
+GET http://127.0.0.1:3001/md
+
+
+
+
+### delete image
+
+# @name delete
+DELETE {{root}}/ac025442-f7fd-42ca-b322-7ca982cac7b7.jpeg
