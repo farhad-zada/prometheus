@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ENVIRONMENT=production PORT=3000 node index.js",
-    "dev": "ENVIRONMENT=development PORT=3000 nodemon index.js"
+    "start": "ENVIRONMENT=production node index.js",
+    "dev": "ENVIRONMENT=development nodemon index.js"
   },
   "keywords": [],
   "author": "",
