@@ -4,7 +4,7 @@ const { saveImage, deleteImage } = require("../controllers/mediaController");
 router.post(
   "/",
   require("../middlewares/mediaMiddleware"),
-  require("../controllers/mediaController")
+  saveImage
 );
 
 router.delete("/:imageName");
