@@ -1,7 +1,11 @@
 const router = require("express").Router();
+const { saveImage, deleteImage } = require("../controllers/mediaController");
 
-module.exports = router.post(
+router.post(
   "/",
   require("../middlewares/mediaMiddleware"),
   require("../controllers/mediaController")
 );
+
+router.delete("/:imageName");
+module.exports = router;

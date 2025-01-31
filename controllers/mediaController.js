@@ -1,15 +1,16 @@
 const sharp = require("sharp");
-const { successResponse } = require("../utils/responseHandlers");
+const { successResponse, errorResponse } = require("../utils/responseHandlers");
 const { v4: uuidv4 } = require("uuid"); // For generating unique IDs
 const { media } = require("../config");
 const logger = require("../utils/logger");
+const fs = require("fs");
 
 /**
  * @param {import('express').Request} req
  * @param {import('express').Response} res
  * @returns {Function}
  */
-module.exports = async (req, res) => {
+async function saveImage(req, res) {
   /**
    * @type {Multer.File[]}
    */
@@ -35,4 +36,27 @@ module.exports = async (req, res) => {
   );
 
   successResponse(res, returns);
+}
+
+/**
+ * @param {import('express').Request} req
+ * @param {import('express').Response} res
+ */
+async function deleteImage(req, res) {
+  await fs.unlink(
+    `${__dirname}/../public/images/${req.params.imageName}`,
+    (err) => {
+      if (err) {
+        console.error("Error deleting file:", err);
+        return errorResponse(res, "Image not found!", 400);
+      }
+      return successResponse(res, { message: "Image deleted!" });
+      console.log("File deleted successfully!");
+    }
+  );
+}
+
+module.exports = {
+  saveImage,
+  deleteImage,
 };
